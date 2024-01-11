@@ -1,0 +1,117 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  /* border: 1px #9300ff solid; */
+}
+body {
+  font-size: 22px;
+  font-family: sans-serif;
+  background-color: #eeeeee;
+}
+/* === */
+.task-menu {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 550px;
+  margin: auto;
+  padding: 15px;
+  /* border: #cccccc 1px solid; */
+  border-radius: 30px;
+  margin-top: 15px;
+  background-color: #fff;
+}
+.task-menu-title {
+}
+#taskCount {
+  font-size: 22px;
+  font-family: sans-serif;
+  text-align: center;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid #888888;
+}
+.create-task-button {
+  font-size: 18px;
+  font-family: sans-serif;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #ddd;
+  color: #2d2d2d;
+  cursor: pointer;
+}
+/* === */
+.task-conteiner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 600px;
+  height: 650px;
+  background-color: #fff;
+  border-radius: 40px;
+  margin: auto;
+  margin-top: 50px;
+}
+.task-description-block {
+  display: flex;
+  flex-direction: column;
+}
+.task-description {
+  width: 550px;
+  height: 150px;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #f3f3f3;
+  border: none;
+  resize: none;
+}
+.task-text-block {
+  display: flex;
+  flex-direction: column;
+}
+.task-text {
+  width: 550px;
+  height: 150px;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #f3f3f3;
+  border: none;
+  resize: none;
+}
+.task-answer-block {
+  display: flex;
+  flex-direction: column;
+}
+.task-answer {
+  width: 550px;
+  height: 50px;
+  font-size: 16px;
+  font-family: sans-serif;
+  padding: 5px;
+  border-radius: 15px;
+  background-color: #f3f3f3;
+  border: none;
+}
+.task-save-button {
+  font-size: 24px;
+  width: 200px;
+  font-family: sans-serif;
+  padding: 20px;
+  border-radius: 30px;
+  border: none;
+  background-color: #ddd;
+  color: #2d2d2d;
+  cursor: pointer;
+  margin: 0 auto;
+  display: block;
+  margin-top: 25px;
+  margin-bottom: 100px;
+}
