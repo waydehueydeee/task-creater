@@ -1,56 +1,63 @@
-// Функция по нажатию кнопки
-let createTaskButton = document
-  .querySelector(".create-task-button")
+// функция по нажатию кнопки "Добавить задание"
+let ButtonAddQuestion = document
+  .querySelector("#add-question-button")
   .addEventListener("click", function () {
-    // Достаём кол-во заданий
-    let taskCount = document.getElementById("taskCount").value;
+    let questionContainer = document.getElementById("test-container");
+    let questionBlocks = document.querySelectorAll(".question");
 
-    // Удаляем всё внутри контейнера
-    let tasksContainer = document.getElementById("tasksContainer");
-    tasksContainer.innerHTML = "";
+    // Увеличение номера задания
+    let questionNumber = questionBlocks.length + 1;
 
-    for (var i = 0; i < taskCount; i++) {
-      // Создаём контейнер для каждого задания
-      var taskDiv = document.createElement("div");
+    // Создание для каждого задания
+    let questionBlock = document.createElement("div");
+    questionBlock.classList.add("question");
 
-      // Присваиваем класс
-      taskDiv.classList.add("task-conteiner");
+    // Создание заголовка задания
+    let questionNumberElement = document.createElement("span");
+    questionNumberElement.classList.add("question-title");
+    questionNumberElement.textContent = "Задание " + questionNumber;
 
-      // Добавляем html разметку
-      taskDiv.innerHTML =
-        '<p class="task-number">Задание №' +
-        (i + 1) +
-        "</p>" +
-        '<div class="task-description-block">' +
-        '<p class="task-description-title">Описание задания</p>' +
-        '<textarea class="task-description"></textarea>' +
-        "</div>" +
-        '<div class="task-text-block">' +
-        '<p class="task-text-title">Текст задания</p>' +
-        '<textarea class="task-text"></textarea>' +
-        "</div>" +
-        '<div class="task-answer-block">' +
-        '<p class="task-answer-title">Ответ</p>' +
-        '<input type="text" class="task-answer" />' +
-        "</div>";
-      // Добавляем разметку в контейнер на странице
-      tasksContainer.appendChild(taskDiv);
-    }
-    // Проверяем наличие кнопки сохранить
-    if (!document.querySelector(".task-save-button")) {
-      // Создаём кнопку
-      let taskSaveButton = document.createElement("button");
+    // Создание описания задания
+    let questionDescriptionInput = document.createElement("textarea");
+    questionDescriptionInput.classList.add("question-description");
+    questionDescriptionInput.setAttribute("placeholder", "Описание задания");
 
-      //   Добавляем класс
-      taskSaveButton.className = "task-save-button";
+    // Создание текста задания
+    let questionTextInput = document.createElement("textarea");
+    questionTextInput.classList.add("question-text");
+    questionTextInput.setAttribute("placeholder", "Текст задания");
 
-      //   Добавляем текст
-      taskSaveButton.textContent = "Сохранить";
+    // Создание ответа задания
+    let questionAnswerInput = document.createElement("input");
+    questionAnswerInput.classList.add("question-answer");
+    questionAnswerInput.setAttribute("type", "text");
+    questionAnswerInput.setAttribute("placeholder", "Ответ");
 
-      // Находим тек body
-      let bodyTag = document.querySelector("body");
+    // Создание кнопки удаления
+    let deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-button");
+    deleteButton.textContent = "Удалить";
+    deleteButton.onclick = function () {
+      questionContainer.removeChild(questionBlock);
+      updateQuestionNumbers();
+    };
 
-      // Добавляем кнопку в тег body
-      bodyTag.appendChild(taskSaveButton);
-    }
+    // Добавляем в контейнер созданные выше элементы
+    questionBlock.appendChild(questionNumberElement);
+    questionBlock.appendChild(questionDescriptionInput);
+    questionBlock.appendChild(questionTextInput);
+    questionBlock.appendChild(questionAnswerInput);
+    questionBlock.appendChild(deleteButton);
+
+    questionContainer.appendChild(questionBlock);
   });
+
+// Пересчёт кол-ва заданий
+function updateQuestionNumbers() {
+  let questionBlocks = document.querySelectorAll(".question");
+
+  questionBlocks.forEach((block, index) => {
+    let questionNumberElement = block.querySelector("span");
+    questionNumberElement.textContent = "Вопрос " + (index + 1);
+  });
+}
