@@ -1,11 +1,9 @@
-/* Импорт шрифта с Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
-  /* border: 1px #c0c4ff solid; */
 }
 
 body {
@@ -15,15 +13,17 @@ body {
 }
 
 button {
+  width: 30%;
+
   font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #2d2d2d;
 
-  border: none;
-  border-radius: 10px;
+  padding: 15px 20px;
 
-  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
 }
 
 button:hover {
@@ -34,8 +34,8 @@ button:hover {
 textarea {
   outline: none;
 }
+
 textarea:focus {
-  /* border: 4px solid #e4d6ff; */
   background-color: #f3f3f3;
 }
 
@@ -44,12 +44,9 @@ input {
 }
 
 input:focus {
-  /* border: 4px solid #e4d6ff; */
   background-color: #f3f3f3;
 }
 
-.test-container {
-}
 .question {
   display: flex;
   flex-direction: column;
@@ -67,69 +64,55 @@ input:focus {
   border: 2px solid #ececec;
   border-radius: 40px;
 }
+
 .question-title {
   align-self: self-start;
+
   margin-bottom: 20px;
   margin-top: 20px;
   margin-left: 50px;
 }
+
+/* Общий стиль для input & textarea */
+.question-general-style {
+  width: 90%;
+  height: 150px;
+  padding: 15px;
+
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  background-color: #ececec;
+
+  border: none;
+  border-radius: 15px;
+
+  resize: none;
+}
+
 .question-description {
-  height: 150px;
-  width: 90%;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  border-radius: 15px;
-  border: none;
-  background-color: #ececec;
-  resize: none;
-  padding: 15px;
 }
+
 .question-text {
-  height: 150px;
-  width: 90%;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  border-radius: 15px;
-  border: none;
-  background-color: #ececec;
-  resize: none;
-  padding: 15px;
 }
+
 .question-answer {
   height: 50px;
-  width: 90%;
-
-  font-family: "Montserrat", sans-serif;
-  font-size: 18px;
-  border-radius: 15px;
-  border: none;
-  background-color: #ececec;
-  padding: 15px;
 }
 
-.question-answer::placeholder {
-}
-
-/* Кнопки управления */
 .delete-button {
-  background-color: #ffdada;
-  width: 20%;
-  margin-top: 15px;
-  margin-bottom: 30px;
   align-self: self-end;
-  margin-right: 40px;
+  margin: 15px 30px 40px 0px;
+  background-color: #ffdada;
 }
+
 #add-question-button {
-  background-color: #e3d6ff;
-  width: 30%;
   margin-right: 10px;
-}
-#save-question-button {
   background-color: #e3d6ff;
-  width: 30%;
+}
+
+#save-question-button {
   margin-left: 10px;
+  background-color: #d6ffdd;
 }
 
 .button-panel {
@@ -139,7 +122,5 @@ input:focus {
   align-items: center;
 
   width: 800px;
-  margin: auto;
-  margin-top: 25px;
-  margin-bottom: 100px;
+  margin: 25px auto 100px auto;
 }

@@ -8,7 +8,7 @@ let ButtonAddQuestion = document
     // Увеличение номера задания
     let questionNumber = questionBlocks.length + 1;
 
-    // Создание для каждого задания
+    // Создание контейнера для каждого задания
     let questionBlock = document.createElement("div");
     questionBlock.classList.add("question");
 
@@ -19,17 +19,23 @@ let ButtonAddQuestion = document
 
     // Создание описания задания
     let questionDescriptionInput = document.createElement("textarea");
-    questionDescriptionInput.classList.add("question-description");
+    questionDescriptionInput.classList.add(
+      "question-description",
+      "question-general-style"
+    );
     questionDescriptionInput.setAttribute("placeholder", "Описание задания");
 
     // Создание текста задания
     let questionTextInput = document.createElement("textarea");
-    questionTextInput.classList.add("question-text");
+    questionTextInput.classList.add("question-text", "question-general-style");
     questionTextInput.setAttribute("placeholder", "Текст задания");
 
     // Создание ответа задания
     let questionAnswerInput = document.createElement("input");
-    questionAnswerInput.classList.add("question-answer");
+    questionAnswerInput.classList.add(
+      "question-answer",
+      "question-general-style"
+    );
     questionAnswerInput.setAttribute("type", "text");
     questionAnswerInput.setAttribute("placeholder", "Ответ");
 
