@@ -15,7 +15,7 @@ let ButtonAddQuestion = document
     // Создание заголовка задания
     let questionNumberElement = document.createElement("span");
     questionNumberElement.classList.add("question-title");
-    questionNumberElement.textContent = "Задание " + questionNumber;
+    questionNumberElement.textContent = "Задание №" + questionNumber;
 
     // Создание описания задания
     let questionDescriptionInput = document.createElement("textarea");
@@ -64,6 +64,6 @@ function updateQuestionNumbers() {
 
   questionBlocks.forEach((block, index) => {
     let questionNumberElement = block.querySelector("span");
-    questionNumberElement.textContent = "Вопрос " + (index + 1);
+    questionNumberElement.textContent = "Задание №" + (index + 1);
   });
 }

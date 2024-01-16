@@ -4,18 +4,18 @@
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
+
+  font-family: "Montserrat", sans-serif;
 }
 
 body {
   color: #2d2d2d;
-  font-family: "Montserrat", sans-serif;
   font-size: 24px;
 }
 
 button {
   width: 30%;
 
-  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   font-weight: 400;
   color: #2d2d2d;
@@ -79,7 +79,6 @@ input:focus {
   height: 150px;
   padding: 15px;
 
-  font-family: "Montserrat", sans-serif;
   font-size: 18px;
   background-color: #ececec;
 
