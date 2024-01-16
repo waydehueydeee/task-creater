@@ -13,6 +13,10 @@ body {
   font-size: 24px;
 }
 
+.hide-element {
+  display: none;
+}
+
 button {
   width: 30%;
 
@@ -45,6 +49,17 @@ input {
 
 input:focus {
   background-color: #f3f3f3;
+}
+
+.test-name-conteiner {
+  width: 80%;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 75px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .question {
@@ -122,4 +137,11 @@ input:focus {
 
   width: 800px;
   margin: 25px auto 100px auto;
+}
+
+.test-name {
+  width: 35%;
+  height: 65px;
+  font-size: 24px;
+  margin-left: 20px;
 }
