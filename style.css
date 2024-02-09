@@ -136,9 +136,9 @@ input:focus {
   background-color: #ffdada;
 }
 
-#add-question-button {
+.add-question-button {
   margin-right: 10px;
-  background-color: #e3d6ff;
+  background-color: #e1f5ff;
 }
 
 #save-question-button {

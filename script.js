@@ -1,6 +1,11 @@
+// Создание кнопки "Сохранить"
+let saveButton = document.createElement("button");
+saveButton.id = "save-question-button";
+saveButton.textContent = "Сохранить";
+
 // функция по нажатию кнопки "Добавить задание"
 let ButtonAddQuestion = document
-  .querySelector("#add-question-button")
+  .querySelector(".add-question-button")
   .addEventListener("click", function () {
     let questionContainer = document.getElementById("test-container");
     let questionBlocks = document.querySelectorAll(".question");
@@ -39,14 +44,21 @@ let ButtonAddQuestion = document
     questionAnswerInput.setAttribute("type", "text");
     questionAnswerInput.setAttribute("placeholder", "Ответ");
 
+    // Добавляем в панель кнопку "Сохранить"
+    let buttonPanel = document.querySelector(".button-panel");
+    buttonPanel.appendChild(saveButton);
+
     // Создание кнопки удаления
     let deleteButton = document.createElement("button");
     deleteButton.classList.add("delete-button");
     deleteButton.textContent = "Удалить";
-    deleteButton.onclick = function () {
+
+    // функция по нажатию кнопки "Удалить"
+    deleteButton.addEventListener("click", function () {
       questionContainer.removeChild(questionBlock);
+
       updateQuestionNumbers();
-    };
+    });
 
     // Добавляем в контейнер созданные выше элементы
     questionBlock.appendChild(questionNumberElement);
@@ -54,7 +66,6 @@ let ButtonAddQuestion = document
     questionBlock.appendChild(questionTextInput);
     questionBlock.appendChild(questionAnswerInput);
     questionBlock.appendChild(deleteButton);
-
     questionContainer.appendChild(questionBlock);
   });
 
@@ -66,4 +77,9 @@ function updateQuestionNumbers() {
     let questionNumberElement = block.querySelector("span");
     questionNumberElement.textContent = "Задание №" + (index + 1);
   });
+
+  // Удаление кнопки "Сохранить" если нет заданий
+  if (questionBlocks.length == 0) {
+    saveButton.remove();
+  }
 }
